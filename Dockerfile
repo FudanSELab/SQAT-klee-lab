@@ -6,6 +6,9 @@ RUN sudo apt-get install -y \
     openssh-server \
     openssh-client
 
+ENV PATH=/home/klee/klee_build/bin:$PATH
+COPY demo demo
+
 RUN sudo service ssh start
 EXPOSE 22
 

@@ -1,0 +1,4 @@
+demo/ll/
+demo/bc/
+*.bc
+*.ll
