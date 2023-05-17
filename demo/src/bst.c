@@ -114,16 +114,6 @@ struct TreeNode* deleteNode(struct TreeNode* root, int key) {
 int main(int argc, char **argv) {
     struct BST *tree = malloc(sizeof(struct BST));
 
-    klee_make_symbolic(&argc, sizeof(argc), "argc");
-    for (int i = 0; i < argc; i++) {
-        char *argv_i;
-        char *argv_i_len;
-        sprintf(argv_i, "argv_%d", i);
-        sprintf(argv_i_len, "argv-len_%d", i);
-        klee_make_symbolic(argv[i], strlen(argv[i])+1, argv_i);
-        int len = klee_range(0, strlen(argv[i]), argv_i_len);
-    }
-
     for (int i = 1; i < argc; i++) {
         int insertVal = atoi(argv[i]);
         insert(tree, insertVal);

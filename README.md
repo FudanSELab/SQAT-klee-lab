@@ -1,20 +1,8 @@
 # SQAT-klee-lab
 
-你可以通过 ghcr.io 获得该 lab 镜像：
+Klee 是由 Stanford University 自主研发的一款全新动态符号执行工具。工具运行在一个被称作「LLVM BC」的输入文件上，在这里，被工具选中的路径将被授予「ktest」，导引测试用例。在这个 lab 里，你将使用 klee 对 3 个文件进行分析，得到一系列输出。
 
-```bash
-docker login ghcr.io
-
-docker pull ghcr.io/fudanselab/sqat-klee-lab:master
-
-docker run --name klee -p 35022:22 -itd ghcr.io/fudanselab/sqat-klee-lab:master
-
-docker exec -it klee bash
-
-cd demo && make all
-```
-
-你可以直接构建 docker image：
+你可以选择在 docker 中完成 lab：
 
 ```bash
 ./script/build-image.sh
@@ -25,6 +13,8 @@ docker exec -it klee bash
 
 cd demo && make all
 ```
+
+或者你可以选择源码安装 klee，详见 [build-klee-from-source](http://klee.github.io/build-llvm11/)。
 
 ## 1. tasks
 
