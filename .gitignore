@@ -36,3 +36,6 @@ bin/
 obj/
 ll/
 bc/
+
+*.bc
+klee-*

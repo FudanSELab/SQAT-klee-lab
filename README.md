@@ -29,7 +29,7 @@ cd demo && make all
 ## 1. tasks
 
 1. symbolic.c 是一份用于测试 klee 的文件。尝试运行 klee 来找出 symbolic.c 文件中的简单错误。
-2. 编译 fs.c 并执行；再使用 klee 尝试找出 fs.c 文件中 main 函数里的错误，并执行 klee 生成的测试用例。
+2. 编译 maze.c 并执行；再使用 klee 执行 maze 程序，执行 klee 为其生成的测试用例，并根据错误的测试用例尝试找出 maze.c 中的逻辑错误。
 3. 编译 bst.c 并执行；再使用 klee 尝试找出 bst.c 文件中的错误，并修复 bst.c 使之符合正常人类的预期。
 
 ## 2. preliminaries
@@ -45,7 +45,7 @@ cd demo && make all
 
 1. 报告：
    1. klee 对 symbolic.c 生成文件的执行结果 (10%)；
-   2. 使用 klee 从 fs.c 中找出 bug 的方式，以及 klee 生成的测试用例在 fs.c 上的执行结果 (50%)；
+   2. klee 对 maze.c 生成文件的执行结果，klee 生成的测试用例在 maze.c 上的执行结果，以及根据测试用例找出的 maze.c 的逻辑错误 (50%)；
    3. 使用 klee 从 bst.c 中找出 bug 的方式，以及对 bst.c 的修复结果 (40%)。
 2. 学习笔记 (optional, 也不计分)：
    1. 动态符号执行如何进行限制条件的求解（
